@@ -11,7 +11,7 @@
 <script>
 import YearProgress from '@/components/YearProgress'
 import qcloud from 'wafer2-client-sdk'
-import { showSuccess } from '@/utils'
+import { showModal, showSuccess, post } from '@/utils'
 import config from '@/config'
 export default {
     data() {
@@ -26,10 +26,19 @@ export default {
         YearProgress
     },
     methods: {
+        async addBook(isbn) {
+            const res = await post('/weapp/addbook', {
+                isbn,
+                openid: this.userInfo.openId
+            })
+            showModal('添加成功', `${res.title}添加成功`)
+        },
         scanCode(){
             wx.scanCode({
                 success: (res) => {
-                    console.log(res)
+                    if(res.result) {
+                        this.addBook(res.result)
+                    }
                 }
             })
         },

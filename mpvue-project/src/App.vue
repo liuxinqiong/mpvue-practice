@@ -9,6 +9,13 @@ export default {
 }
 </script>
 <style lang="scss">
+.text-primary {
+    color: #EA5149;
+}
+.text-footer {
+    text-align: center;
+    font-size: 12px; 
+}
 .btn {
     color: white;
     background: #EA5A49;

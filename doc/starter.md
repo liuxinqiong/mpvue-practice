@@ -111,3 +111,7 @@ mysql
 
 得到用户信息
 * npm install wafer2-client-sdk --save
+
+移动端下拉分页
+* page = 0，不显示『没有更多数据』提醒
+* page > 0 && list.length < 10，停止触底加载，显示提醒
