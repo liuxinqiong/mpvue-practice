@@ -28,4 +28,14 @@ export default {
         background: #FA5A49;
     }
 }
+.right {
+    float: right;
+}
+.page-title {
+    padding-left: 20px;
+    line-height: 40px;
+    background: #eee;
+    font-size: 14px;
+
+}
 </style>
